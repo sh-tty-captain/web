@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8bc9255f-c798-46ae-a62f-e0ed110015b4" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>testimonials</find>
+      <find>f5f5f5</find>
+      <find>d2d2d2</find>
+      <find>e0e0e0</find>
+      <find>Выбирайте стиль кэжуал, чтобы выглядеть стильно.</find>
+      <find>\</find>
+      <find>style=&quot;font-family: tahoma, geneva, sans-serif; font-size: 16px; line-height: 150%;&quot;</find>
+    </findStrings>
+  </component>
+  <component name="ProjectId" id="1UUt5h2OBlgwQtmE5io7CEq0kZD" />
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1577204246860" />
+    <property name="editor.config.ad.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8bc9255f-c798-46ae-a62f-e0ed110015b4" name="Default Changelist" comment="" />
+      <created>1575422824590</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1575422824590</updated>
+      <workItem from="1575422869878" duration="609000" />
+      <workItem from="1575423671514" duration="664000" />
+      <workItem from="1575424504087" duration="10247000" />
+      <workItem from="1575453393033" duration="422000" />
+      <workItem from="1575454304818" duration="42443000" />
+      <workItem from="1575845541526" duration="10307000" />
+      <workItem from="1575926982112" duration="27287000" />
+      <workItem from="1575973250338" duration="20765000" />
+      <workItem from="1576056824149" duration="19597000" />
+      <workItem from="1576091740618" duration="5206000" />
+      <workItem from="1576141769476" duration="24326000" />
+      <workItem from="1576228798700" duration="13029000" />
+      <workItem from="1576643669998" duration="231000" />
+      <workItem from="1577043551162" duration="13232000" />
+      <workItem from="1577074119921" duration="9784000" />
+      <workItem from="1577095591235" duration="37159000" />
+      <workItem from="1577261791336" duration="10002000" />
+      <workItem from="1578489843847" duration="938000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>

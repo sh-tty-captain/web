@@ -1,0 +1,53 @@
+body {
+  font-family: $default-font;
+  font-size: 100%;
+  color: $gray-dark-color-2;
+}
+
+h1 {
+  font-size: $header-size;
+  font-weight: 700;
+  color: $violet-color;
+
+  span {
+    color: $violet-light-color-1;
+  }
+}
+
+h2 {
+  font-weight: 700;
+  font-size: calc(#{$header-size} - 5px);
+}
+
+p,
+li {
+  font-size: $default-size;
+}
+
+p,
+ul {
+  margin: 10px 0;
+}
+
+span {
+  &.cur {
+    font-weight: 300;
+  }
+}
+
+a {
+  @include transition();
+
+  color: $violet-color;
+  text-decoration: none;
+  border-bottom: none;
+
+  &:hover {
+    color: $black-color;
+  }
+
+  &:active,
+  &:focus {
+    color: $violet-color;
+  }
+}

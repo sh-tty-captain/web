@@ -1,0 +1,60 @@
+footer {
+  &.active {
+    @include transform(translateX(-300px));
+  }
+
+  .top {
+    padding: {
+      top: 55px;
+      bottom: 55px;
+    }
+
+    &__logo {
+      img {
+        @include transition();
+
+        width: 150px;
+        height: 62px;
+
+        &:hover {
+          opacity: .8;
+        }
+      }
+    }
+
+    &__contacts {
+      @media only screen and (max-width: 560px) {
+        width: 100%;
+        padding-top: 40px;
+      }
+    }
+
+    .location {
+      margin-top: 0;
+    }
+
+    .phone {
+      margin-bottom: 0;
+    }
+  }
+
+  .bottom {
+    text-align: center;
+    padding: {
+      top: 45px;
+      bottom: 45px;
+    }
+
+    p {
+      @extend %no-margin;
+
+      color: $dark-gray-color;
+      line-height: 1;
+
+      span {
+        font-weight: 700;
+        color: $black-color;
+      }
+    }
+  }
+}

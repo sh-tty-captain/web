@@ -1,0 +1,26 @@
+footer {
+  text-align: center;
+  width: 100%;
+
+  p {
+    @extend %no-margin;
+
+    font-size: $small-font;
+  }
+
+  .top {
+    background: $accent-color-3;
+  }
+
+  .bottom {
+    background: $accent-color;
+
+    a {
+      color: $white-color;
+
+      &:hover {
+        border-bottom: 1px solid $white-color;
+      }
+    }
+  }
+}

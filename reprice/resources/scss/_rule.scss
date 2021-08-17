@@ -1,0 +1,286 @@
+*, *::after, *::before {
+  @extend %border-box;
+}
+
+.content {
+  @include content();
+}
+.flexbox {
+  @include flexbox(space-between, stretch,space-between);
+}
+
+.vFlexbox {
+  @include flexbox(center, center, center, column);
+}
+
+.noMargin {
+   @extend %no-margin;
+ }
+
+.fixed {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.profit {
+  color: $green-color;
+}
+
+.loss {
+  color: $red-color;
+}
+
+#toTop {
+  position: fixed;
+  display: none;
+
+  bottom: 40px;
+  right: 30px;
+
+  width: 80px;
+  height: 70px;
+  background-color: rgba($white-color, .1);
+
+  cursor: pointer;
+  z-index: 999;
+
+  @include transition();
+
+  @media (max-width: 680px) {
+    width: 60px;
+    height: 50px;
+  }
+
+  &::after {
+    @include background-svg(arrow_top);
+    background-size: cover;
+
+    position: absolute;
+    content: '';
+
+    top: 14px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+
+    width: 40px;
+    height: 40px;
+
+    margin: auto;
+    opacity: .6;
+
+    @media (max-width: 680px) {
+      width: 30px;
+    }
+  }
+
+  &:hover {
+    @include animation(top);
+
+    background-color: rgba($white-color, .6);
+
+    &::after {
+      opacity: 1;
+    }
+  }
+}
+
+button,
+input.submit {
+  @include button();
+}
+
+ul {
+  @include list();
+}
+
+input,
+textarea {
+  @include input();
+}
+
+input[type='checkbox'] {
+  @include border-radius(2px);
+
+  -webkit-appearance: none;
+
+  max-width: 15px;
+      width: 15px;
+  height: 15px;
+
+  border: 1px solid $gray-color;
+
+  margin: 0;
+  padding: 0;
+
+  &:checked {
+    background: $violet-color;
+  }
+}
+.checkbox {
+  @include flexbox(flex-start, center, flex-start);
+
+  label {
+    @include transition();
+
+    margin-left: 10px;
+    cursor: pointer;
+
+    &:hover {
+      color: $violet-color;
+    }
+  }
+
+  margin-bottom: 15px;
+}
+
+input[type='number'] {
+    &::-webkit-inner-spin-button {
+      opacity: 1;
+    }
+}
+
+.quantity {
+  position: relative;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button
+{
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number]
+{
+  -moz-appearance: textfield;
+}
+
+.number {
+  &_nav {
+    @extend %verticalAlign;
+
+    right: 20px;
+    height: 21px;
+
+    &__button {
+      right: 0;
+
+      cursor: pointer;
+
+      -webkit-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+           -o-user-select: none;
+              user-select: none;
+
+      z-index: 9;
+
+      &::after {
+        @include transition();
+        @extend %verticalAlign;
+
+        content: '';
+        right: 0;
+
+        width: 13px;
+        height: 10px;
+
+        background-size: contain;
+      }
+
+      &.number_up {
+        &::after {
+          @include background-svg(triangle_violet_top);
+
+          top: 0;
+        }
+
+        &:hover {
+          &::after {
+            @include background-svg(triangle_black_top);
+          }
+        }
+      }
+
+      &.number_bottom {
+        &::after {
+          @include background-svg(triangle_violet_bottom);
+
+          bottom: 0;
+        }
+
+        &:hover {
+          &::after {
+            @include background-svg(triangle_black_bottom);
+          }
+        }
+      }
+    }
+  }
+}
+
+.select {
+  @include select();
+}
+
+.hidden {
+  display: none;
+}
+
+.tooltip {
+  position: relative;
+  cursor: help;
+
+  @media only screen and (max-width: 560px), (orientation: portrait) {
+    text-align: center;
+  }
+
+  &::after {
+    @include transition();
+    @include shadow(0 1px 2px rgba($black-color, .3));
+
+    position: absolute;
+
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: rgba($black-color, .8);
+    content: attr(data-tooltip);
+
+    width: 200px;
+
+    font-size: 14px;
+    font-weight: 300;
+    color: $white-color;
+    text-align: center;
+
+    padding: 6px 10px 8px;
+    margin-top: 5px;
+
+    opacity: 0;
+    visibility: hidden;
+    z-index: 9;
+  }
+
+  &:hover {
+    &::after {
+      opacity: 1; /* Показываем его */
+      visibility: visible;
+    }
+  }
+}
+
+a {
+  .tooltip {
+    cursor: pointer;
+  }
+}

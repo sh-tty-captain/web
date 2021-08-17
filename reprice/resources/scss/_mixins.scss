@@ -1,0 +1,526 @@
+// Общие
+
+%position-absolute {
+  position: absolute;
+  content: '';
+
+  left: 0;
+  top: 0;
+}
+
+%border-box {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+       -o-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+%no-margin {
+  margin: 0;
+}
+
+%verticalAlign {
+  top: 50%;
+  position: absolute;
+  transform: translateY(-50%);
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius !important;
+     -moz-border-radius: $radius !important;
+      -ms-border-radius: $radius !important;
+       -o-border-radius: $radius !important;
+          border-radius: $radius !important;
+}
+
+@mixin transform($transform) {
+  -webkit-transform: $transform;
+     -moz-transform: $transform;
+      -ms-transform: $transform;
+       -o-transform: $transform;
+          transform: $transform;
+}
+
+// Основные блоки; скелет страницы
+
+@mixin content {
+  @extend %border-box;
+
+  position: relative;
+  max-width: 1800px;
+      width: 100%;
+
+  padding: 0 15px;
+  margin: 0 auto;
+
+  @media only screen and (max-width: 1600px) {
+    max-width: 1400px;
+  }
+}
+@mixin flexbox($align-content, $align-items, $justify-content, $flex-direction:row, $wrap:wrap) {
+  -js-display: flex;
+      display: flex;
+  flex-direction: $flex-direction;
+  flex-wrap: $wrap;
+  align-content: $align-content;
+  align-items: $align-items;
+  justify-content: $justify-content;
+}
+
+
+// Изображения
+
+@mixin background-rule($color, $repeat, $position, $size) {
+  background: {
+    color: $color;
+    repeat: $repeat;
+    position: $position;
+    size: $size;
+  }
+}
+
+@mixin background-svg($file) {
+  background-image: url(../images/svg/#{$file}.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@mixin background-png($file) {
+  background-image: url(../images/#{$file}.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@mixin grayscale($gray:grayscale(1)) {
+  -webkit-filter: $gray;
+  -moz-filter: $gray;
+  -ms-filter: $gray;
+  -o-filter: $gray;
+  filter: $gray;
+}
+
+@mixin shadow($shadow) {
+  -webkit-box-shadow: $shadow;
+     -moz-box-shadow: $shadow;
+      -ms-box-shadow: $shadow;
+       -o-box-shadow: $shadow;
+          box-shadow: $shadow;
+}
+
+// Анимация
+
+@mixin transition($transition-first:all .3s ease-out, $transition-second:all .3s ease-out, $transition-third:auto) {
+  transition: $transition-first, $transition-second, $transition-third;
+}
+
+@mixin placeholder() {
+  color: $gray-light-color-3;
+  font-weight: 400;
+  font-size: $small-size;
+}
+
+@mixin button($color:$violet-color, $color-background:transparent, $color-text:$white-color) {
+  @include transition();
+  @include border-radius(3px);
+
+  position: relative;
+
+  width: auto;
+  background-color: $color-background;
+
+  font-weight: 400;
+  font-size: $default-size;
+  line-height: 1;
+  color: $color;
+  text-transform: uppercase;
+
+  border: 1px solid $color;
+  outline: none;
+
+  padding: 8px 20px 7px;
+
+  cursor: pointer;
+
+  &:hover {
+    color: $color-text;
+    background: $color;
+    border: 1px solid $color;
+  }
+
+  &:active,
+  &:focus {
+    background-color: darken($color, 5%);
+    outline: none;
+  }
+}
+
+@mixin list() {
+  li {
+    position: relative;
+
+    padding-left: 12px;
+
+    &::before {
+      position: absolute;
+      content: '\2022';
+
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+@mixin input($color:$violet-color) {
+  @include transition();
+
+  background: transparent;
+  font-weight: 300;
+  line-height: 1;
+  font-size: 1rem;
+  color: $color;
+
+  border: none;
+  border-bottom: 2px solid $color;
+  outline: none;
+
+  padding: 10px 5px 4px;
+
+  &:focus,
+  &:active {
+    background-color: transparent;
+
+    outline: none;
+
+    &::-webkit-input-placeholder {
+      color: transparent;
+    }
+
+    &::-ms-input-placeholder {
+      color: transparent;
+    }
+
+    &::-moz-placeholder {
+      color: transparent;
+    }
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    &:-ms-input-placeholder {
+      color: transparent;
+    }
+
+    &:-moz-placeholder {
+      color: transparent;
+    }
+  }
+
+  &::-webkit-input-placeholder {
+    @include placeholder();
+  }
+
+  &::-ms-input-placeholder {
+    @include placeholder();
+  }
+
+  &::-moz-placeholder {
+    @include placeholder();
+  }
+
+  &::placeholder {
+    @include placeholder();
+  }
+
+  &:-ms-input-placeholder {
+    @include placeholder();
+  }
+
+  &:-moz-placeholder {
+    @include placeholder();
+  }
+}
+
+@mixin select() {
+  @extend %border-box;
+
+  position: relative;
+  padding-right: 25px;
+
+  select {
+    @include transition();
+
+    font-family: $default-font;
+    font-size: $small-size;
+    color: $gray-dark-color-2;
+
+    border: none;
+
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+
+    cursor: pointer;
+  }
+
+  .selectboxit {
+    @include transition();
+    @include border-radius(5px);
+    @include shadow(0 4px 25px rgba($black-color, .05));
+    @extend %border-box;
+
+    width: auto !important;
+    height: auto !important;
+    background-color: $white-color;
+    background-image: none;
+
+    border: none;
+
+    padding: 10px 100px 10px 50px !important;
+
+    .selectboxit-arrow-container {
+      i {
+        display: none;
+      }
+
+      &::before {
+        @include background-svg(triangle);
+        @extend %verticalAlign;
+
+        content: '';
+
+        right: 28px;
+
+        width: 14px;
+        height: 12px;
+        background-size: cover;
+
+        margin-top: 2px;
+      }
+    }
+
+    .selectboxit-text {
+      font-family: $default-font;
+      font-size: calc(#{$default-size} + 3px);
+      color: $gray-color;
+      text-indent: 0;
+
+      margin-top: 2px;
+
+
+      @media only screen and (max-width: 1600px) {
+        font-size: $default-size;
+      }
+    }
+
+    .selectboxit-option-icon-container {
+      display: none;
+    }
+
+    &.selectboxit-enabled {
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: rgba($white-color, .9);
+
+        .selectboxit-text {
+          color: $violet-color;
+        }
+      }
+    }
+  }
+
+  .selectboxit-container {
+    * {
+      font-family: $default-font;
+      font-size: calc(#{$default-size} + 3px);
+      color: $gray-dark-color-2;
+
+
+      @media only screen and (max-width: 1600px) {
+        font-size: $default-size;
+      }
+    }
+
+    ul {
+      @include border-radius(10px);
+      @include shadow(0 4px 25px rgba($black-color, .05));
+      @extend %border-box;
+
+      min-width: 100% !important;
+          width: auto !important;
+      border: 1px solid rgba($gray-light-color-5, .9);
+
+      padding: 20px 25px;
+      margin-top: 5px;
+
+      li {
+        @include transition();
+
+        display: block;
+        text-indent: 0;
+
+        padding-left: 0;
+        margin: 5px 0;
+
+        &:first-child {
+          margin-top: 0;
+        }
+
+        &::before {
+          display: none;
+        }
+
+        &.selectboxit-focus {
+          a {
+            background: none;
+            color: $violet-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin background_shadow($padding: 18px 26px, $radius:10px, $background-color:$white-color, $text-color:$gray-dark-color-1, $border-color:$gray-light-color-5) {
+  @include border-radius($radius);
+  @include shadow(0 4px 25px rgba($black-color, .05));
+  @extend %border-box;
+
+  background: $background-color;
+
+  color: $text-color;
+
+  border: 1px solid rgba($border-color, .9);
+  padding: $padding;
+}
+
+@mixin hidden_form() {
+  @include background_shadow();
+
+  display: none;
+  position: absolute;
+
+  width: 404px;
+
+  font-weight: 400;
+
+  overflow: hidden;
+
+  .search_filter {
+    input {
+      width: 100%;
+    }
+
+    .input_search {
+      position: relative;
+
+      &__button {
+        @include transition();
+        @include background-svg(list_violent);
+        @extend %verticalAlign;
+
+        display: block;
+        content: '';
+
+        right: 0;
+
+        width: 11px;
+        height: 12px;
+        background-size: contain;
+
+        z-index: 9;
+        cursor: pointer;
+
+        &:hover,
+        &.active {
+          @include background-svg(list_black);
+        }
+      }
+
+      input {
+        padding-right: 25px;
+      }
+    }
+
+    .checkbox_section {
+      margin-top: 20px;
+
+      &__main {
+        margin-bottom: 27px;
+
+        .selected_items {
+          p {
+            text-transform: uppercase;
+            text-align: center;
+            color: $gray-light-color-2;
+
+            margin-top: 15px;
+          }
+        }
+      }
+    }
+
+    .button_section {
+      margin-top: 40px;
+
+      button {
+        font-size: $small-size;
+        color: $gray-dark-color-1;
+
+        border: none;
+        padding: 0;
+
+        &:hover,
+        &:focus,
+        &:active {
+          color: $violet-color;
+          background: none;
+        }
+
+        &#cancel {
+          margin-right: 40px;
+        }
+
+        &#apply {
+          color: $violet-color;
+          font-weight: 500;
+
+          &:hover,
+          &:focus,
+          &:active {
+            color: $gray-dark-color-1;
+          }
+        }
+      }
+    }
+  }
+
+  &.active {
+    display: block;
+    height: auto;
+  }
+}
+
+// Анимация
+
+@mixin animation($nameAnimation) {
+  -webkit-animation: $nameAnimation 1s ease-in-out infinite;
+     -moz-animation: $nameAnimation 1s ease-in-out infinite;
+      -ms-animation: $nameAnimation 1s ease-in-out infinite;
+       -o-animation: $nameAnimation 1s ease-in-out infinite;
+          animation: $nameAnimation 1s ease-in-out infinite;
+}
+
+
+@keyframes top {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(0, -10px);
+  }
+}

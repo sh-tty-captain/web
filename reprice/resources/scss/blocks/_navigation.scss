@@ -1,0 +1,117 @@
+nav {
+  @include shadow(0 4px 25px rgba($black-color, .05));
+
+  height: 180px;
+  background: $white-color;
+
+  .navigation {
+    align-items: center;
+
+    &__login {
+      p {
+        @extend %no-margin;
+
+        position: relative;
+
+        font-size: $small-size;
+        font-weight: 300;
+        text-transform: lowercase;
+
+        padding-left: 55px;
+
+        a {
+          color: $gray-color;
+
+          &:hover {
+            color: $violet-color;
+          }
+        }
+
+        &::before {
+          @include background-svg(login);
+          @extend %verticalAlign;
+
+          content: '';
+
+          left: 0;
+
+          width: 40px;
+          height: 40px;
+          background-size: cover;
+        }
+      }
+    }
+
+    &__logo {
+      h1 {
+        @extend %no-margin;
+
+        a {
+          span {
+            @include transition();
+          }
+
+          &:hover {
+            color: $violet-light-color-1;
+          }
+        }
+      }
+    }
+
+    &__language {
+      .select {
+        padding-right: 0;
+
+        .selectboxit {
+          @include transition();
+          @include shadow(none);
+
+          background: none;
+          padding: 0 0 0 20px !important;
+
+          &:hover {
+            opacity: .8;
+          }
+
+          .selectboxit-arrow-container {
+            left: 0;
+            right: auto;
+
+            &::before {
+              right: auto;
+            }
+          }
+
+          .selectboxit-text[data-val="english"] {
+            float: right;
+            position: relative;
+            color: transparent !important;
+
+            &::before {
+              @include background-png(english);
+              @extend %verticalAlign;
+
+              content: '';
+              right: 0;
+
+              width: 46px;
+              height: 23px;
+            }
+          }
+        }
+
+        .selectboxit-options {
+          right: 0;
+        }
+
+        ul  {
+          min-width: 80px !important;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 1600px) {
+    height: 100px;
+  }
+}
