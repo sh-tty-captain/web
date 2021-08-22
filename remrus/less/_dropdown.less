@@ -1,0 +1,223 @@
+/* prefixed */
+
+.dropdown {
+    -webkit-transition: all 150ms ease-in-out;
+    transition: all 150ms ease-in-out;
+    div, li, div::after {
+        -webkit-transition: all 150ms ease-in-out;
+        transition: all 150ms ease-in-out;
+    }
+    .selected {
+        &::after {
+            -webkit-pointer-events: none;
+            -moz-pointer-events: none;
+            -ms-pointer-events: none;
+            pointer-events: none;            
+        }
+    }
+    &.scrollable {
+        div {
+            &::after {
+                -webkit-pointer-events: none;
+                -moz-pointer-events: none;
+                -ms-pointer-events: none;
+                pointer-events: none;
+            }
+        }
+    }
+}
+/* prefixed */
+
+
+.dropdown{
+    position: relative;
+    border: none;
+    cursor: pointer;
+    background: #fff;
+
+    border-radius: 4px;
+    
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    
+    &:hover {
+        box-shadow: 0 0 5px rgba(0,0,0,.15);
+    }
+    
+    &.open {
+        z-index: 3;
+        border-radius: 2px 0px 0px 2px;
+        position: relative;
+        &::after {
+            position: absolute;
+            content: '\f0d8';
+            font-family: 'FontAwesome';
+            color: #8f9bae;
+            right: 12px;
+            top: 6px;
+        }
+        div {
+            opacity: 1;
+            z-index: 2;
+        }
+    }
+    
+    &.focus {
+        box-shadow: 0 0 5px rgba(51,102,248,.4);
+    }
+    
+    &::after {
+        position: absolute;
+        content: '\f0d7';
+        font-family: 'FontAwesome';
+        color: #8f9bae;
+        right: 12px;
+        top: 6px;
+    }
+    
+    /* old dropdown */
+    .old {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 0;
+        width: 0;
+        overflow: hidden;
+    }
+    select {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+    }
+    &.touch {
+        .old {
+            width: 100%;
+            height: 100%;
+        }
+        select {
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+        }
+    }
+    /* end. old dropdown */
+    
+    .selected {
+        display: block;
+        font-size: 14px;
+        line-height: 1;
+        color: @light-text;
+        padding: 12px 0 12px 35px;
+        overflow: hidden;
+        white-space: nowrap;
+        
+        color: @text-color;
+        &::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 60px;
+
+            border-radius: 0 2px 2px 0;
+            box-shadow: inset -55px 0 25px -20px @white;
+        }
+    }
+    &.disabled {
+        color: @light-text;
+    }
+
+    div {
+        position: absolute;
+        height: 0;
+        left: 0px;
+        right: 0px;
+        top: 100%;
+        margin-top: -2px;
+        background: @white;
+        border: none;
+        border-radius: 0 0 4px 4px;
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, .2);
+        overflow: hidden;
+        opacity: 0;
+        padding-bottom: 22px;
+    }
+    &.scrollable {
+        div {
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                height: 50px;
+
+                box-shadow: inset 0 -50px 30px -35px @white; 
+            }
+        }
+        &.bottom {
+            div {
+                &::after {
+                    opacity: 0;
+                }
+            }
+        }
+        &.open {
+            ul {
+                overflow-y: auto;
+            } 
+        }
+    }
+    
+    ul {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        list-style: none;
+        overflow: hidden;
+        padding-left: 0;
+        margin-top: 10px;
+    }
+    
+    li {
+        display: block;
+        font-size: 14px;
+        line-height: 1;
+        color: @text-color;
+        padding: 12px 0 12px 35px;
+        overflow: hidden;
+        white-space: nowrap;
+        list-style: none;
+        padding: 8px 12px;
+        &.focus {
+            background: @brand-red;
+            position: relative;
+            z-index: 3;
+            color: @white;
+        }
+        &.active {
+            font-weight: 700;
+            cursor: default;
+        }
+        &:first-child {
+            color: @light-text;
+            cursor: default;
+            &:hover {
+                background: @white;
+            }
+            &.active {
+                &.focus {
+                    background: @white;
+                    position: relative;
+                    z-index: 3;
+                    color: @light-text;
+                }
+            }
+        }
+    }
+}

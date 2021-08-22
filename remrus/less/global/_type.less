@@ -1,0 +1,84 @@
+/* Файл _type.less */
+
+h1,h2,h3,h4,h5,h6 {
+	font-weight: normal;
+}
+h1, h2, h3, h5 {
+	font-family: @font-extrabold;
+}
+
+h1 {
+	font-size: 28pt;
+	line-height: 2;
+    @media (max-width: 640px) {
+        font-size: 24pt;   
+        line-height: 32px;
+    }
+}
+h2 {
+	font-size: 30px;
+	line-height: 35px;
+    @media (max-width: 640px) {
+        font-size: 26px;
+        line-height: 31px;  
+    }
+}
+h3 {
+	font-size: 20px;
+    line-height: 30px;
+    @media (max-width: 640px) {
+        font-size: 17px;
+        line-height: 27px;  
+    }
+}
+h4 {
+	font-size: @font-size;
+	line-height: 18px;
+}
+h5 {
+ font-size: 15px;
+ line-height: 20px;
+}
+h6 {
+ font-size: 13px;
+ color: #909baf;
+ line-height: 20px;
+}
+
+a {
+	color: @light-text;
+	text-decoration: none;
+    transition: all .1s ease-out;
+	&:hover {
+		text-decoration: none;
+        color: @dop-blue;
+	}
+}
+a:active,
+a:focus {
+	outline: expression(hideFocus='true');
+}
+
+
+.main-wrapper {
+    ul {
+        margin: 30px 0 0;
+        list-style: none;
+        padding-left: 0;
+        li {
+            padding-left: 30px;
+            padding-bottom: 20px;
+            position: relative;
+            &::before {
+                position: absolute;
+                content: '○';
+                font-size: @font-size - 1px;
+                color: @green-color;
+                margin: auto;
+                left: 0;
+                top: 0;
+                bottom: 0;
+            }
+        }
+    }
+}

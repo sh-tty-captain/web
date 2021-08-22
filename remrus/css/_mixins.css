@@ -1,0 +1,4 @@
+/* Файл _mixins.less */
+.clearfix {
+  clear: both;
+}

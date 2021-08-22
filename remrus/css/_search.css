@@ -1,0 +1,3 @@
+button.search__trigger:focus ~ input.focus-search {
+  border: 1px solid red;
+}

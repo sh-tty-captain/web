@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="6" viewBox="0 0 28 6">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #b5bdc9;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="more.svg" class="cls-1" d="M1360,928a3,3,0,1,1-3,3A3,3,0,0,1,1360,928Zm11,0a3,3,0,1,1-3,3A3,3,0,0,1,1371,928Zm11,0a3,3,0,1,1-3,3A3,3,0,0,1,1382,928Z" transform="translate(-1357 -928)"/>
+</svg>

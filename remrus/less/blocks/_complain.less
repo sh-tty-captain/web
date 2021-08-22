@@ -1,0 +1,139 @@
+.complain {
+	.container();
+    &.mrgn {
+        margin: 75px auto 65px;
+    }
+}
+
+.complain-wrapper {
+    .flex(@flex-wrap: nowrap);
+    .border(@width: 1px, @style: solid, @color: @grey-color);
+    border-radius: 5px;
+    box-shadow: 1px 3px 3px 1px rgba(220, 225, 230, 0.2);
+    height: auto;
+    padding: 25px 40px;
+    @media (max-width: 991px) {
+        padding: 25px 50px;
+    }
+    @media (max-width: 680px) {
+        padding: 25px 30px;
+    }
+    @media (max-width: 480px) {
+        .flex(@flex-wrap: wrap);
+    } 
+}
+
+.complain__text {
+    .flex(@flex-wrap: nowrap);
+    width: 69%;
+    @media (max-width: 1399px) {
+        width: 70%;
+    } 
+    @media (max-width: 1279px) {
+        width: 72%;
+    } 
+    @media (max-width: 1199px) {
+        width: 73%;
+    } 
+    @media (max-width: 1039px) {
+        width: 74%;
+    } 
+    @media (max-width: 991px) {
+        display: block;
+        width: 60%;
+    }   
+    @media (max-width: 480px) {
+        width: 100%;
+    } 
+}
+.complain__title {
+	font-size: 25px;
+	line-height: 23px;
+    @media (max-width: 991px) {
+        margin-bottom: 10px;
+        margin-top: 0px;
+    }
+    @media (max-width: 680px) {
+        font-size: 20px;
+        margin-bottom: 0px;
+    }
+}
+
+.complain__descr {
+	line-height: 1.2;
+	font-size: @font-size - 1px;
+	color: @light-text;
+    @media (max-width: 991px) {
+        margin-top: 10px;
+        margin-bottom: 0px;
+    }
+    @media (max-width: 680px) {
+        font-size: @font-size - 3px;
+        margin-top: 5px;
+    }
+}
+
+.complain__links {
+    @media (max-width: 991px) {
+        width: 40%;
+    }
+    @media (max-width: 480px) {
+        width: 100%;
+    } 
+}
+.wrapper__links {
+    width: auto;
+    float: right;
+    @media (max-width: 480px) {
+        .flex();
+        float: none;
+    } 
+}
+.complain__link {
+	padding-left: 40px;
+	font-family: @font-extrabold;
+	font-size: @font-size - 1px;
+	line-height: 26px;
+	margin: 17px 0;
+	display: block;
+	color: @brand-blue;
+	&--thanks {
+		.background(
+			@image: url(../images/reaction-happy.svg), 
+			@repeat: no-repeat, 
+			@position: center left, 
+			@size: 26px 26px
+		);
+        margin-top: 0;
+        @media (max-width: 680px) {
+            background-size: 20px 20px;
+            margin-bottom: 5px;
+        }
+        @media (max-width: 480px) {
+            margin-bottom: 0px;
+        }
+	}
+	&--petition {
+		.background(
+			@image: url(../images/reaction-sad.svg), 
+			@repeat: no-repeat, 
+			@position: center left, 
+			@size: 26px 26px
+		);
+        margin-bottom: 0px;
+        @media (max-width: 680px) {
+            background-size: 20px 20px;
+            margin-top: 5px;
+        }
+        @media (max-width: 480px) {
+            margin-top: 0px;
+        }
+	}
+    @media (max-width: 680px) {
+        font-size: @font-size - 3px;
+        padding-left: 30px;
+    }
+    @media (max-width: 480px) {
+        margin-top: 15px;
+    }
+}

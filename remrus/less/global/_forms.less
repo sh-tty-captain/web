@@ -1,0 +1,66 @@
+/* Файл _forms.less */
+
+.input {
+	height: 50px;
+	line-height: 48px;
+	padding: 0 20px;
+	box-sizing: border-box;
+    background: @white;
+	border: 1px solid #e0e6ed;
+	border-radius: 4px;
+	&:hover {
+		border-color: #c5cfdc;
+	}
+	&:focus {
+		border-color: #13ce66;
+	}
+	&--disable {
+		background: #f9fbfc;
+		color: #cdd3dd;
+	}
+}
+
+.button--green {
+	.button(@bg: @btn-green);
+	.border(@color: @btn-green);
+	&:hover {
+		background: @btn-green-hover;
+		border-color: @btn-green-hover;
+	}
+	&:active {
+		.box-shadow();
+	}
+}
+.button--red {
+	.button(@bg: @btn-red);
+	.border(@color: @btn-red);
+	&:hover {
+		background: @btn-red-hover;
+		border-color: @btn-red-hover;
+	}
+	&:active {
+		.box-shadow();
+	}
+}
+.button--yellow {
+	.button(@bg: @btn-yellow);
+	.border(@color: @btn-yellow);
+	&:hover {
+		background: @btn-yellow-hover;
+		border-color: @btn-yellow-hover;
+	}
+	&:active {
+		.box-shadow();
+	}
+}
+.button--blue {
+	.button(@bg: @btn-blue);
+	.border(@color: @btn-blue);
+	&:hover {
+		background: @btn-blue-hover;
+		border-color: @btn-blue-hover;
+	}
+	&:active {
+		.box-shadow();
+	}
+}

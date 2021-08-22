@@ -1,0 +1,30 @@
+/* Файл _layout.less */
+
+.second-link {
+	color: @blue-color;
+	border-bottom: 1px dotted @blue-color;
+	line-height: 1.2;
+	&:hover {
+		color: #3ea2ee;
+		border-bottom: 1px dotted #3ea2ee;
+	}
+}
+
+.show-more {
+	text-align: center;
+	.second-link {
+		color: @light-text;
+		&:hover {
+			border: none;
+		}
+	}
+}
+
+.block-title {
+	text-align: center;
+	margin: 0;
+	padding: 30px 0;
+	&--blue {
+		color: @brand-blue;
+	}
+}

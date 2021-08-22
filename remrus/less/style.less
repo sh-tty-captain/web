@@ -1,0 +1,40 @@
+// out: ../css/style.css
+
+@import "_normalize.less";
+
+body {
+    font-family: @font-family;
+    font-size: @font-size;
+    background: darken(@white, 2%);
+    color: @text-color;
+    line-height: @line-height;
+}
+
+@import "_variables.less";
+@import "_mixins.less";
+@import "_breadcrumbs.less";
+@import "_dropdown.less";
+@import "_search.less";
+
+@import "global/_fonts.less"; 
+@import "global/_layout.less";
+@import "global/_forms.less";
+@import "global/_type.less";
+
+@import "inner-pages/_blog-wrapper.less";
+@import "inner-pages/_order.less";
+@import "inner-pages/_about.less";
+
+@import "blocks/_page-header.less";
+@import "blocks/_main-banner.less";
+@import "blocks/_main-menu.less";
+@import "blocks/_popular.less";
+@import "blocks/_utp.less";
+@import "blocks/_reviews.less";
+@import "blocks/_masters.less";
+@import "blocks/_complain.less";
+@import "blocks/_brands.less";
+@import "blocks/_page-footer.less"; 
+@import "blocks/_category.less";
+@import "blocks/_consultations.less";
+@import "blocks/_steps.less";

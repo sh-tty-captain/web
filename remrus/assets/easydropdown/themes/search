@@ -1,0 +1,55 @@
+.search {
+form {
+position: relative;
+width: 300px;
+margin: 0 auto;
+height: 25px;
+}
+.focus-search {
+height: 35px;
+width: 0;
+padding: 0 25px 0 15px;
+border: none;
+border-bottom: 2px solid transparent;
+outline: none;
+background: transparent;
+transition: .4s cubic-bezier(0, 0.8, 0, 1);
+position: absolute;
+top: 0;
+right: 0;
+z-index: 2;
+}
+span {
+border: none;
+background: none;
+height: 25px;
+width: 25px;
+position: absolute;
+top: 0;
+right: 0;
+cursor: pointer;
+z-index: 3;
+.background(
+@image: url(../images/search.svg),
+@position: center,
+@size: 25px 25px
+);
+&:hover {
+.background(
+@image: url(../images/search_hover.svg),
+@position: center,
+@size: 25px 25px
+);
+}
+&:focus ~ .focus-search {
+width: 300px;
+z-index: 1;
+border-bottom: 1px solid @grey-color;
+}
+}
+
+
+<form>
+    <input name="s" placeholder="Что Вы хотите найти?" type="search" class="focus-search">
+    <button class="search__trigger" type="button"></button>
+</form>

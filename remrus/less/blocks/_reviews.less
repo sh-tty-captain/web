@@ -1,0 +1,115 @@
+.reviews {
+    .reviews-wrapper {
+        height: auto;
+        .container();
+        .block-title {
+            padding: 15px 0 25px;
+        }
+    }
+}
+
+.reviews-slider {
+    .page-slider();
+    .short-review {
+        &.slick-slide {
+            height: auto;
+        }
+        .inner {
+            .border-block(@width: calc(~'100% - 14px'), @padding: 19px 19px 10px);
+            height: 230px;
+            &:first-child {
+                margin-left: 7px;
+            }
+            @media (max-width: 1279px) {
+                height: 240px;
+            }
+            @media (max-width: 400px) {
+                height: 270px;
+            }
+        }
+    }
+}
+
+
+.short-review__text {
+	font-family: @font-lite;
+	font-size: 17px;
+    line-height: 20px;
+	color: @light-text;
+	text-align: center;
+	margin: 7px 0 12px 0;
+    padding-top: 30px;
+    position: relative;
+	&:before {
+		content: " ";
+        position: absolute;
+        top: 0;
+		display: block;
+		width: 100%;
+		height: 20px;
+		.background(
+			@image: url(../images/quote.svg), 
+			@repeat: no-repeat, 
+			@position: top center, 
+			@size: 16px 13px);
+	}
+    @media (max-width: 1399px) {
+        max-height: 80px;
+        overflow: hidden;
+    }
+    @media (max-width: 768px) {
+        max-height: 80px;
+        overflow: hidden;
+    }
+}
+
+.short-review__link {
+	display: inline-block;
+	margin-top: 20px;
+	padding-right: 30px;
+    margin-left: 30px;
+    color: #9e83db;
+    font-size: @font-size - 2px;
+	.background(
+		@image: url(../images/arrow-thin.svg), 
+		@repeat: no-repeat, 
+		@position: center right, 
+		@size: 21px 9px,
+	);
+    &:hover {
+        color: @green-color;
+        .background(
+            @image: url(../images/arrow-thin--hover.svg), 
+            @repeat: no-repeat, 
+            @position: center right, 
+            @size: 21px 9px,
+        );
+    }
+}
+.second-link {
+    font-size: @font-size - 2px;
+}
+.short-review .second-link:hover {
+	color: @yellow-color;
+	border-color: @yellow-color;
+}
+
+.reviews-more {
+	width: 100%;
+	text-align: center;
+	margin: 25px 0;
+	line-height: 40px;
+}
+.reviews-more__link {
+	display: inline-block;
+	line-height: 38px;
+	padding: 0 35px;
+	font-size: 14px;
+	.border(@width: 1px, @style: solid, @color: #ccd3da);
+	border-radius: 4px;
+	&:hover {
+		background: @btn-green;
+        color: @white;
+		border-color: @btn-green;
+	}
+}

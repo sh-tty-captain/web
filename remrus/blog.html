@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>БЛОГ — Ремрус</title>
+
+        <!-- FontAwesome -->
+        <link rel='stylesheet'  href='assets/fontawesome/css/font-awesome.min.css' type='text/css' media='all' />
+
+        <!-- Style -->
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+
+        <!-- Slick Carousel -->
+        <link rel="stylesheet" type="text/css" href="assets/slickcarousel/slick/slick.css"/>
+        <link rel="stylesheet" type="text/css" href="assets/slickcarousel/slick/slick-theme.css"/>
+
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<script src="http://css3-mediaqueries-js.googlecode.com/files/css3-mediaqueries.js"></script>
+<![endif]-->
+
+
+        <script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
+        <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery.maskedinput.js"></script>
+        <script type="text/javascript" src="js/menu.js" type="text/javascript"></script> 
+
+        <script type="text/javascript" src="assets/slickcarousel/slick/slick.min.js"></script>
+        <script type="text/javascript" src="assets/easydropdown/src/jquery.easydropdown.js" type="text/javascript"></script>
+        <script type="text/javascript" src="js/callback.js"></script>
+
+
+        <script type="text/javascript">
+            jQuery(function($){
+                $("#phone").mask("+7 (999) 999-9999");
+                $("#date").mask("99.99.9999",{placeholder:"мм.дд.гггг"});
+            });
+        </script>
+
+
+
+        <!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+    </head>
+
+    <body class="body">
+        <section class="head">
+            <div class="head-wrapper">
+                <header class="page-header">
+                    <div class="page-top">
+                        <div class="page-top-container">
+                            <h6 class="page-top__region"><span>Ваш регион:</span> <a class="second-link page-top__link" href="#">Москва и Подмосковье</a></h6>
+                            <ul class="small-navi">
+                                <li class="small-navi__item hidden-item"><a href="#">Вопросы и ответы</a></li>
+                                <li class="small-navi__item hidden-item"><a href="#">Полезное</a></li>
+                                <li class="small-navi__item"><a href="#">Контакты</a></li>
+                                <li class="small-navi__item"><a href="about.html">О компании</a></li>
+                                <li class="small-navi__item"><a href="#">Отзывы</a></li>
+                                <li class="small-navi__item more">Ещё
+                                    <ul class="small-navi--hidden hddn">
+                                        <li class="small-navi__item"><a href="#">Вопросы и ответы</a></li>
+                                        <li class="small-navi__item"><a href="http://fontawesome.io/icon/caret-up/">Полезное</a></li>
+                                    </ul>
+                                </li>
+                                <li class="small-navi__item small-navi__item--signin"><a href="#">Войти</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="header-inner">
+                        <a class="logo" href="index.html">
+                            <img class="logo__img" src="images/logotype.png">
+                            <div class="logo-txt">
+                                <h1 class="logo__big">Вежливый сервис</h1>
+                                <h3 class="logo__small">Срочно на дому</h3>
+                            </div>
+                        </a>
+
+                        <div class="">
+                            <h6 class="working">Работаем ежедневно,<span class="br"></span> без<span class="br-min"></span> выходных и праздничных дней</h6>
+                        </div>
+                        <div class="">
+                            <h4 class="call-phone">8 (495)<noskype></noskype> 000-05-55 <br/><a class="second-link" href="#">Перезвоните мне</a></h4>
+                        </div>
+
+                        <div class="search">
+                            <form>
+                                <input placeholder="Что Вы хотите найти?" type="search">
+                            </form>
+                            <!-- <button class="search__trigger" type="button"></button> -->
+                        </div>                    
+                    </div>
+                </header>
+
+                <div class="main-menu">
+                    <a id="touch-menu" class="mobile-menu" href="#">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+
+                    <div class="menu">
+                        <div class="main-menu-container">
+                            <ul class="main-nav">
+                                <li class="main-nav__item main-nav__item--header main-nav__item--repair"><a href="#">Ремонт</a></li>
+                                <li class="main-nav__item main-nav__item--header main-nav__item--electrics"><a href="#">Электрика и сантехника</a></li>
+                                <li class="main-nav__item main-nav__item--header main-nav__item--cleaning"><a href="#">Уборка</a></li>
+                            </ul>
+
+                            <div class="button-order">
+                                <input class="button--red" type="submit" id="submit" value="Вызвать мастера">
+                            </div>
+                        </div>
+
+                        <div class="main-submenu submenu-repair repair-hover">
+                            <div class="submenu-container">
+                                <div class="submenu-wrapper">
+                                    <div class="submenu-item submenu-item--household">
+                                        <h3 class="submenu-item__title"><a href="subcategory.html">Ремонт бытовой техники</h3></a>
+                                        <ul class="submenu-list">
+                                            <li class="submenu-list__item"><a href="#">Стиральных машин</a></li>
+                                            <li class="submenu-list__item"><a href="#">Телевизоров</a></li>
+                                            <li class="submenu-list__item"><a href="#">Холодильников</a></li>
+                                            <li class="submenu-list__item"><a href="#">Кофемашин</a></li>
+                                            <li class="submenu-list__item"><a href="#">Посудомоечных машин</a></li>
+                                            <li class="submenu-list__item"><a href="#">Кухонных плит</a></li>
+                                            <li class="submenu-list__item"><a href="#">Швейных машин</a></li>
+                                            <li class="submenu-list__item"><a href="#">Микроволновых печей</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="submenu-item submenu-item--digital">
+                                        <h3 class="submenu-item__title"><a href="subcategory.html">Ремонт цифровой техники</a></h3>
+                                        <ul class="submenu-list">
+                                            <li class="submenu-list__item"><a href="#">Телевизоров</a></li>
+                                            <li class="submenu-list__item"><a href="#">Смартфонов</a></li>
+                                            <li class="submenu-list__item"><a href="#">iPhone</a></li>
+                                            <li class="submenu-list__item"><a href="#">Планшетов</a></li>
+                                            <li class="submenu-list__item"><a href="#">Компьютеров (компьютерная помощь)</a></li>
+                                            <li class="submenu-list__item"><a href="#">Ноутбуков</a></li>
+                                            <li class="submenu-list__item"><a href="#">Установка/настройка windows</a></li>
+                                            <li class="submenu-list__item"><a href="#">Установка/настройка программ</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="submenu-item submenu-item--renovation">
+                                        <h3 class="submenu-item__title"><a href="subcategory.html">Ремонт помещений</a></h3>
+                                        <ul class="submenu-list">
+                                            <li class="submenu-list__item"><a href="#">Ремонт и отделка квартир</a></li>
+                                            <li class="submenu-list__item"><a href="#">Ремонт офисов</a></li>
+                                            <li class="submenu-list__item"><a href="#">Ремонт и отделка коттеджей</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="goto-category">
+                                    <a href="category.html">Перейти в раздел ремонта</a>
+                                </div>
+
+                                <div class="submenu-bottom">
+                                    <div class="working-holydais">
+                                        <span class="working-holydais__text">Работаем в праздники!</span>
+                                    </div>
+                                    <div class="requests requests--submenu">
+                                        <a class="requests__wrapper" href="#"><p class="requests__button requests__button--pipe">Вызвать сантехника</p></a>
+                                        <a class="requests__wrapper" href="#"><p class="requests__button requests__button--light">Вызвать электрика</p></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="main-submenu submenu-electrics electrics-hover">
+                            <div class="submenu-container">
+                                <div class="submenu-wrapper">
+                                    <div class="submenu-item submenu-item--electric">
+                                        <h3 class="submenu-item__title"><a href="subcategory.html">Электрика</a></h3>
+                                        <ul class="submenu-list">
+                                            <li class="submenu-list__item"><a href="#">Ремонт и замена электрической проводки</a></li>
+                                            <li class="submenu-list__item"><a href="#">Диагностика поломок электрических приборов и оборудования</a></li>
+                                            <li class="submenu-list__item"><a href="#">Установка электрических щитов</a></li>
+                                            <li class="submenu-list__item"><a href="#">Монтаж дополнительных силовых линий от электрощита</a></li>
+                                            <li class="submenu-list__item"><a href="#">Установка осветительных приборов</a></li>
+                                            <li class="submenu-list__item"><a href="#">Монтаж и настройка ландшафтного освещения</a></li>
+                                            <li class="submenu-list__item"><a href="#">Работы по монтажу заземления</a></li>
+                                            <li class="submenu-list__item"><a href="#">Проектирование внутренней электросети, создание резервных линий</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="submenu-item submenu-item--plumbing">
+                                        <h3 class="submenu-item__title"><a href="subcategory.html">Сантехника</a></h3>
+                                        <ul class="submenu-list">
+                                            <li class="submenu-list__item"><a href="#">Ремонт сантехники</a></li>
+                                            <li class="submenu-list__item"><a href="#">Демонтаж старых сантехнических приборов и установка новых</a></li>
+                                            <li class="submenu-list__item"><a href="#">Ремонт и монтаж труб водоснабжения и канализации</a></li>
+                                            <li class="submenu-list__item"><a href="#">Устранение/прочистка засора канализации</a></li>
+                                            <li class="submenu-list__item"><a href="#">Устранение протечек воды</a></li>
+                                            <li class="submenu-list__item"><a href="#">Ноутбуков</a></li>
+                                            <li class="submenu-list__item"><a href="#">Установка/настройка windows</a></li>
+                                            <li class="submenu-list__item"><a href="#">Установка/настройка программ</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="subscrible">
+                                    <p>* а так же другие работы любой сложности</p>
+                                </div>
+
+                                <div class="goto-category">
+                                    <a href="category.html">Перейти в раздел электрики и сантехники</a>
+                                </div>
+
+                                <div class="submenu-bottom">
+                                    <div class="working-holydais">
+                                        <span class="working-holydais__text">Работаем в праздники!</span>
+                                    </div>
+                                    <div class="requests requests--submenu">
+                                        <a class="requests__wrapper" href="#"><p class="requests__button requests__button--pipe">Вызвать сантехника</p></a>
+                                        <a class="requests__wrapper" href="#"><p class="requests__button requests__button--light">Вызвать электрика</p></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="main-submenu submenu-cleaning cleaning-hover">
+                            <div class="submenu-container">
+                                <div class="submenu-wrapper">
+                                    <div class="submenu-item submenu-item--cleaning">
+                                        <h3 class="submenu-item__title"><a href="subcategory.html">Уборка</a></h3>
+                                        <ul class="submenu-list">
+                                            <li class="submenu-list__item"><a href="#">Мытьё окон</a></li>
+                                            <li class="submenu-list__item"><a href="#">Уборка квартир</a></li>
+                                            <li class="submenu-list__item"><a href="#">Уборка офисов</a></li>
+                                            <li class="submenu-list__item"><a href="#">Уборка коттеджей</a></li>
+                                            <li class="submenu-list__item"><a href="#">Химчистка мягкой мебели, ковров</a></li>
+                                            <li class="submenu-list__item"><a href="#">Удаление запахов</a></li>
+                                            <li class="submenu-list__item"><a href="#">Специализированные работы</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="goto-category">
+                                    <a href="category.html">Перейти в раздел уборки</a>
+                                </div>
+
+                                <div class="submenu-bottom">
+                                    <div class="working-holydais">
+                                        <span class="working-holydais__text">Работаем в праздники!</span>
+                                    </div>
+                                    <div class="requests requests--submenu">
+                                        <a class="requests__wrapper" href="#"><p class="requests__button requests__button--pipe">Вызвать сантехника</p></a>
+                                        <a class="requests__wrapper" href="#"><p class="requests__button requests__button--light">Вызвать электрика</p></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </section>
+
+
+        <section class="breadcrumbs">
+            <div class="breadcrumbs-nav">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="about.html">О компании</a></li>
+                    <li class="active"><a href="#">Блог</a></li>
+                </ul>
+
+                <h1>Блог</h1>
+            </div>
+        </section>
+
+        
+        <section class="main-wrapper">
+            <div class="content-menu">
+                <ul>
+                    <li><a href="about.html">О компании</a></li>
+                    <li class="active"><a href="blog.html">Блог</a></li>
+                    <li><a href="#">Сервис</a></li>
+                    <li><a href="#">Мастера</a></li>
+                    <li><a href="#">Частые вопросы</a></li>
+                    <li><a href="#">Услуги обслуживания</a></li>
+                    <li><a href="#">Контакты</a></li>
+                    <li><a href="#">Обратная связь</a></li>
+                </ul>
+            </div>
+
+            <div class="blog">
+                <div class="blog-item">
+                    <a href="blog-page.html" class="blog-item__header">
+                        <img class="image" src="images/blog_1.jpg">
+                        
+                        <div class="content-text">
+                            <h4 class="date">4 апреля 2016, 15:38</h4>
+                            <h3 class="title">Поздравляем с днем строителя!</h3>
+                        </div>
+                    </a>
+
+                    <div class="content">
+                        <p class="blog-item__text">
+                            Мы долго к этому шли: представляем вашему вниманию наш новый сайт
+                        </p>
+
+                        <div class="read-more">
+                            <a href="blog-page.html">Подробнее <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="blog-item">
+                    <a href="blog-page.html" class="blog-item__header">
+                        <img class="image" src="images/blog_2.jpg">
+                        
+                        <div class="content-text">
+                            <h4 class="date">4 апреля 2016, 15:38</h4>
+                            <h3 class="title">Замена модуля LCD Sony Tablet Z1</h3>
+                        </div>
+                    </a>
+
+                    <div class="content">
+                        <p class="blog-item__text">
+                            После дождичка во вторник
+                        </p>
+
+                        <div class="read-more">
+                            <a href="blog-page.html">Подробнее <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="blog-item">
+                    <a href="blog-page.html" class="blog-item__header">
+                        <img class="image" src="images/blog_3.jpg">
+
+                        <div class="content-text">
+                            <h4 class="date">4 апреля 2016, 15:38</h4>
+                            <h3 class="title">Бесплатный звонок в наш колл-центр по всей России</h3>
+                        </div>
+                    </a>
+
+                    <div class="content">
+                        <p class="blog-item__text">
+                            Украшаем стены
+                        </p>
+
+                        <div class="read-more">
+                            <a href="blog-page.html">Подробнее <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="blog-item">
+                    <a href="blog-page.html" class="blog-item__header">
+                        <img class="image" src="images/blog_4.jpg">
+
+                        <div class="content-text">
+                            <h4 class="date">4 апреля 2016, 15:38</h4>
+                            <h3 class="title">Мы запускаем направление по ремонту оргтехники на выезде</h3>
+                        </div>
+                    </a>
+
+                    <div class="content">
+                        <p class="blog-item__text">
+                            Когда Джордж Истмен был подростком, у него не было многого из того, что бы он хотел иметь.
+                        </p>
+
+                        <div class="read-more">
+                            <a href="blog-page.html">Подробнее <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="blog-item">
+                    <a href="blog-page.html" class="blog-item__header">
+                        <img class="image" src="images/blog_5.jpg">
+                        
+                        <div class="content-text">
+                            <h4 class="date">4 апреля 2016, 15:38</h4>
+                            <h3 class="title">Стартует обучение по ремонту холодильников!</h3>
+                        </div>
+                    </a>
+
+                    <div class="content">
+                        <p class="blog-item__text">
+                            На сегодняшний день существует два типа сенсорных экранов: резистивные и ёмкостные.
+                        </p>
+
+                        <div class="read-more">
+                            <a href="blog-page.html">Подробнее <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="blog-item">
+                    <a href="blog-page.html" class="blog-item__header">
+                        <img class="image" src="images/blog_6.jpg">
+
+                        <div class="content-text">
+                            <h4 class="date">4 апреля 2016, 15:38</h4>
+                            <h3 class="title">Замена камеры iPhone 5</h3>
+                        </div>
+                    </a>
+
+                    <div class="content">
+                        <p class="blog-item__text">
+                            Наш первый курс "Ремонт стиральных и посудомоечных машин".
+                        </p>
+
+                        <div class="read-more">
+                            <a href="blog-page.html">Подробнее <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="show-more"><a class="second-link" href="#">Показать ещё</a></p>
+            </div>
+
+            <div class="clearfix"></div>
+        </section>
+
+        
+        <div class="bottom-block border">
+            <section class="utp">
+                <ul class="upt-list">
+                    <li class="upt-list__item upt-list__item--fast"><a class="second-link" href="#">Оперативно</a></li>
+                    <li class="upt-list__item upt-list__item--service"><a class="second-link" href="#">Сервис и поддержка</a></li>
+                    <li class="upt-list__item upt-list__item--official"><a class="second-link" href="#">Официально</a></li>
+                    <li class="upt-list__item upt-list__item--large"><a class="second-link" href="#">Масштабно</a></li>
+                    <li class="upt-list__item upt-list__item--history"><a class="second-link" href="#">История</a></li>
+                </ul>
+            </section>
+
+            <section class="complain">
+                <div class="complain-wrapper">
+                    <div class="complain__text">
+                        <h3 class="complain__title">Пожаловаться<span class="br"></span> директору</h3>
+                        <h5 class="complain__descr">Если у вас остались претензии после ремонта,<span class="br"></span> вы можете рассказать их директору и вас обязательно услышат.</h5>
+                    </div>
+
+                    <div class="complain__links">
+                        <div class="wrapper__links">
+                            <a class="complain__link complain__link--thanks" href="#">Благодарности</a>
+                            <a class="complain__link complain__link--petition" href="#">Пожаловатся директору</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="brands">
+                <div class="brands-wrapper">
+                    <h3 class="block-title brands__title">Мы осуществляем ремонт техники <span class="block-title--blue">следующих брендов</span></h3>
+
+                    <div class="brand-block">
+                        <div class="brands-list">
+                            <div class="brands-list__item">
+                                <a href="#"><img src="images/brand_1.svg"></a>                             
+                            </div>
+
+                            <div class="brands-list__item">
+                                <a href="#"><img src="images/brand_2.svg"></a>
+                            </div>
+
+                            <div class="brands-list__item">
+                                <a href="#"><img src="images/brand_3.svg"></a>
+                            </div>
+
+                            <div class="brands-list__item">
+                                <a href="#"><img src="images/brand_4.svg"></a>
+                            </div>
+
+                            <div class="brands-list__item">
+                                <a href="#"><img src="images/brand_5.svg"></a>
+                            </div>
+
+                            <div class="brands-list__item">
+                                <a href="#"><img src="images/brand_6.svg"></a>
+                            </div>
+
+                            <div class="brands-list__item">
+                                <a href="#"><img src="images/brand_7.svg"></a>
+                            </div>
+
+                            <div class="brands-list__item">
+                                <a href="#"><img src="images/brand_1.svg"></a>                             
+                            </div>
+
+                            <div class="brands-list__item">
+                                <a href="#"><img src="images/brand_2.svg"></a>
+                            </div>
+
+                            <div class="brands-list__item">
+                                <a href="#"><img src="images/brand_3.svg"></a>
+                            </div>
+
+                            <div class="brands-list__item">
+                                <a href="#"><img src="images/brand_4.svg"></a>
+                            </div>
+
+                            <div class="brands-list__item">
+                                <a href="#"><img src="images/brand_5.svg"></a>
+                            </div>
+
+                            <div class="brands-list__item">
+                                <a href="#"><img src="images/brand_6.svg"></a>
+                            </div>
+
+                            <div class="brands-list__item">
+                                <a href="#"><img src="images/brand_7.svg"></a>
+                            </div>
+
+                            <div class="brands-list__item">
+                                <a href="#"><img src="images/brand_1.svg"></a>                             
+                            </div>
+
+                            <div class="brands-list__item">
+                                <a href="#"><img src="images/brand_2.svg"></a>
+                            </div>
+
+                            <div class="brands-list__item">
+                                <a href="#"><img src="images/brand_3.svg"></a>
+                            </div>
+
+                            <div class="brands-list__item">
+                                <a href="#"><img src="images/brand_4.svg"></a>
+                            </div>
+
+                            <div class="brands-list__item">
+                                <a href="#"><img src="images/brand_5.svg"></a>
+                            </div>
+
+                            <div class="brands-list__item">
+                                <a href="#"><img src="images/brand_6.svg"></a>
+                            </div>
+
+                            <div class="brands-list__item">
+                                <a href="#"><img src="images/brand_7.svg"></a>
+                            </div>
+                        </div> 
+
+                        <div class="dots"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        
+        <section class="order-wrapper">
+            <div class="order-block">
+                <h2>Заявка</h2>
+
+                <form class="callback" action="/" id="callback-form" method="post">
+                    <fieldset id="inputs">
+                        <div class="top">
+                            <div class="inner-input">
+                                <img src="images/phone_ico.png">
+                                <input id="phone" type="text" placeholder="+7 (___) __-__-__" required>
+                            </div>
+
+                            <div class="inner-input">
+                                <img src="images/name_ico.png">
+                                <input id="name" type="text" placeholder="Имя" required>
+                            </div>
+
+                            <div class="inner-input">
+                                <img src="images/date_ico.png">
+                                <input id="date" type="text" placeholder="Удобное время звонка">
+                            </div>
+                        </div>
+
+                        <div class="bottom">
+                            <div class="inner-input">
+                                <textarea id="repair" type="text" placeholder="Что чинить?"></textarea>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset id="actions">
+                        <input class="button--red" type="submit" id="submit" value="Вызвать мастера">
+                    </fieldset>
+                </form>
+            </div>
+
+            <div class="footer-decorations"></div>
+        </section>
+
+        
+        <footer class="page-footer">
+            <div class="footer-navi">
+                <ul class="main-nav main-nav--footer">
+                    <li class="main-nav__item main-nav__item--footer main-nav__item--repair"><a href="category.html">Ремонт</a></li>
+                    <li class="main-nav__item main-nav__item--footer main-nav__item--electrics"><a href="category.html">Электрика и сантехника</a></li>
+                    <li class="main-nav__item main-nav__item--footer main-nav__item--cleaning"><a href="category.html">Уборка</a></li>
+                </ul>
+                <ul class="small-navi small-navi--footer">
+                    <li class="small-navi__item small-navi__item--footer"><a href="#">Вопросы и ответы</a></li>
+                    <li class="small-navi__item small-navi__item--footer"><a href="#">Полезное</a></li>
+                    <li class="small-navi__item small-navi__item--footer"><a href="#">Контакты</a></li>
+                    <li class="small-navi__item small-navi__item--footer"><a href="about.html">О компании</a></li>
+                    <li class="small-navi__item small-navi__item--footer"><a href="#">Отзывы</a></li>
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-info">
+                    <h6 class="working working--footer">Работаем ежедневно, <br/>без выходных и праздничных дней</h6>
+                    <h4 class="footer-email"><a href="#">info@remrus.ru</a></h4>
+                    <h4 class="call-phone call-phone--footer">8 (495) 000-05-55 <br/><a class="second-link" href="#">Перезвоните мне</a></h4>
+                </div>
+
+                <div class="footer-copyrights">
+                    <h6 class="footer-copyrights__text">2016 © 5+ Вежливый сервис</h6>
+                </div>
+            </div>
+        </footer>
+
+
+        <!-- слайдер баннеров -->
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('.brands-list').slick({
+                    dots: true,
+                    infinite: true,
+                    speed: 300,
+                    slidesToShow: 8,
+                    slidesToScroll: 8,
+                    responsive: [
+                        {
+                            breakpoint: 1399,
+                            settings: {
+                                slidesToShow: 6,
+                                slidesToScroll: 6,
+                                infinite: true,
+                                dots: true
+                            }
+                        },
+                        {
+                            breakpoint: 1199,
+                            settings: {
+                                slidesToShow: 5,
+                                slidesToScroll: 5
+                            }
+                        },
+                        {
+                            breakpoint: 991,
+                            settings: {
+                                slidesToShow: 4,
+                                slidesToScroll: 4
+                            }
+                        },
+                        {
+                            breakpoint: 768,
+                            settings: {
+                                slidesToShow: 3,
+                                slidesToScroll: 3
+                            }
+                        },
+                        {
+                            breakpoint: 600,
+                            settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1
+                            }
+                        }
+                        // You can unslick at a given breakpoint now by adding:
+                        // settings: "unslick"
+                        // instead of a settings object
+                    ]
+                });
+            });
+        </script>
+
+        <!-- end. слайдер баннеров -->
+
+
+        <!-- Шапка - "Ещё" // доработать: не кликабельные ссылки + если нажать на за пределами, чтобы развернуть снова необходимо дважды кликнуть -->
+
+        <script>
+            $('.more').toggle(
+                function(){ $('.small-navi--hidden').addClass('hddn--active') },
+                function(){ $('.small-navi--hidden').removeClass('hddn--active') }
+            );
+            $('.more').toggle(
+                function(){ $('.more').addClass('more--active') },
+                function(){ $('.more').removeClass('more--active') }
+            );
+            $('.body').click(
+                function(){ $('.small-navi--hidden').removeClass('hddn--active') }
+            );
+            $('.body').click(
+                function(){ $('.more').removeClass('more--active') }
+            );
+        </script>
+
+        <!-- end. Шапка - "Ещё" -->
+
+
+        <!-- menu & submenu -->
+
+        <script>
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 116) {
+                    $('.main-menu').addClass("main-menu--fixed");
+                    $('.main-banner').addClass("main-banner--top");
+                } else {
+                    $('.main-menu').removeClass("main-menu--fixed");
+                    $('.main-banner').removeClass("main-banner--top");
+                }
+            });
+
+
+
+            $('.main-nav__item--header.main-nav__item--repair').hover(
+                function(){ $('.submenu-repair').addClass('main-submenu--open') },
+                function(){ $('.submenu-repair').removeClass('main-submenu--open') }
+            );
+            $('.main-nav__item--header.main-nav__item--repair').hover(
+                function(){ $('.main-nav__item--repair').addClass('main-nav__item--repair--hover') },
+                function(){ $('.main-nav__item--repair').removeClass('main-nav__item--repair--hover') }
+            );
+            $('.submenu-repair').hover(
+                function(){ $('.submenu-repair').addClass('main-submenu--open') },
+                function(){ $('.submenu-repair').removeClass('main-submenu--open') }
+            );
+            $('.repair-hover').hover(
+                function(){ $('.main-nav__item--repair').addClass('main-nav__item--repair--hover') },
+                function(){ $('.main-nav__item--repair').removeClass('main-nav__item--repair--hover') }
+            );
+
+            $('.submenu-electrics').hover(
+                function(){ $('.submenu-electrics').addClass('main-submenu--open') },
+                function(){ $('.submenu-electrics').removeClass('main-submenu--open') }
+            );
+            $('.main-nav__item--header.main-nav__item--electrics').hover(
+                function(){ $('.main-nav__item--electrics').addClass('main-nav__item--electrics--hover') },
+                function(){ $('.main-nav__item--electrics').removeClass('main-nav__item--electrics--hover') }
+            );
+            $('.main-nav__item--header.main-nav__item--electrics').hover(
+                function(){ $('.submenu-electrics').addClass('main-submenu--open') },
+                function(){ $('.submenu-electrics').removeClass('main-submenu--open') }
+            );
+            $('.electrics-hover').hover(
+                function(){ $('.main-nav__item--electrics').addClass('main-nav__item--electrics--hover') },
+                function(){ $('.main-nav__item--electrics').removeClass('main-nav__item--electrics--hover') }
+            );
+
+            $('.main-nav__item--header.main-nav__item--cleaning').hover(
+                function(){ $('.submenu-cleaning').addClass('main-submenu--open') },
+                function(){ $('.submenu-cleaning').removeClass('main-submenu--open') }
+            );
+            $('.main-nav__item--header.main-nav__item--cleaning').hover(
+                function(){ $('.main-nav__item--cleaning').addClass('main-nav__item--cleaning--hover') },
+                function(){ $('.main-nav__item--cleaning').removeClass('main-nav__item--cleaning--hover') }
+            );
+            $('.submenu-cleaning').hover(
+                function(){ $('.submenu-cleaning').addClass('main-submenu--open') },
+                function(){ $('.submenu-cleaning').removeClass('main-submenu--open') }
+            );
+            $('.cleaning-hover').hover(
+                function(){ $('.main-nav__item--cleaning').addClass('main-nav__item--cleaning--hover') },
+                function(){ $('.main-nav__item--cleaning').removeClass('main-nav__item--cleaning--hover') }
+            );
+        </script>        
+
+        <!-- open/close menu on click -->
+        <script>
+            $('.main-nav__item--header.main-nav__item--repair').toggle(
+                function(){ $('.submenu-repair').addClass('main-submenu--open') },
+                function(){ $('.submenu-repair').removeClass('main-submenu--open') }
+            );
+
+
+            $('.main-nav__item--header.main-nav__item--electrics').toggle(
+                function(){ $('.submenu-electrics').addClass('main-submenu--open') },
+                function(){ $('.submenu-electrics').removeClass('main-submenu--open') }
+            );
+
+            $('.main-nav__item--header.main-nav__item--cleaning').toggle(
+                function(){ $('.submenu-cleaning').addClass('main-submenu--open') },
+                function(){ $('.submenu-cleaning').removeClass('main-submenu--open') }
+            );
+        </script>
+        <!-- end. open/close menu on click -->
+
+        <!-- footer -->
+        <script>
+            $('.footer-repair').hover(
+                function(){ $('.footer-nav__item--repair').addClass('main-nav__item--repair--hover') },
+                function(){ $('.footer-nav__item--repair').removeClass('main-nav__item--repair--hover') }
+            );
+
+            $('.footer-electrics').hover(
+                function(){ $('.footer-nav__item--electrics').addClass('main-nav__item--electrics--hover') },
+                function(){ $('.footer-nav__item--electrics').removeClass('main-nav__item--electrics--hover') }
+            );
+
+            $('.footer-cleaning').hover(
+                function(){ $('.footer-nav__item--cleaning').addClass('main-nav__item--cleaning--hover') },
+                function(){ $('.footer-nav__item--cleaning').removeClass('main-nav__item--cleaning--hover') }
+            );
+        </script>
+        <!-- end. footer -->
+
+        <!-- end. menu & submenu -->
+    </body>
+
+</html>
