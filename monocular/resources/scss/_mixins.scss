@@ -1,0 +1,476 @@
+// Общие
+
+%absolute-position {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+%border-box {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+       -o-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+%no-margin {
+  margin: 0;
+}
+
+%uppercase {
+  text-transform: uppercase;
+}
+
+%justify {
+  text-align: justify;
+}
+
+%verticalAlign {
+  top: 50%;
+  position: absolute;
+  transform: translateY(-50%);
+}
+
+@mixin border($width, $color) {
+  border: $width solid $color;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+       -o-border-radius: $radius;
+          border-radius: $radius;
+}
+
+
+// Основные блоки; скелет страницы
+
+%width-column {
+  padding: {
+    left: 11px;
+    right: 11px;
+  }
+
+  box-sizing: border-box;
+}
+
+%margin-stable {
+  margin: {
+    left: 15px;
+    right: 15px;
+  }
+}
+
+@mixin content {
+  position: relative;
+  max-width: 1032px;
+      width: calc(100% - 35px);
+  height: 100%;
+
+  @extend %width-column;
+
+  margin: 0 auto;
+  padding: 3em 0;
+
+  z-index: 2;
+
+  @media all and (orientation: portrait) {
+    padding: 5em 0;
+  }
+}
+
+@mixin flexbox($align-content, $align-items, $justify-content, $flex-direction:row, $wrap:wrap) {
+  -js-display: flex;
+  display: flex;
+  flex-direction: $flex-direction;
+  flex-wrap: $wrap;
+  align-content: $align-content;
+  align-items: $align-items;
+  justify-content: $justify-content;
+}
+
+// Анимация
+
+@mixin transition($property:all, $duration:.3s, $function:ease-out) {
+  transition: {
+    property: $property;
+    duration: $duration;
+    timing-function: $function;
+  }
+}
+
+
+@mixin button {
+  @include border-radius(55px);
+  @include transition();
+
+  background: $yellow-color;
+  height: 110px;
+  color: $dark-gray;
+  line-height: 1;
+
+  border: none;
+
+  cursor: pointer;
+  z-index: 99;
+
+  h1 {
+    font-size: 1.2em;
+    line-height: .9;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  p {
+    font-size: .7em;
+    line-height: .9;
+    font-weight: 200;
+    letter-spacing: .2em;
+
+    margin: 0;
+  }
+
+  &:hover {
+    background: lighten($yellow-color, 30%);
+    color: $dark-gray;
+  }
+
+  @media all and (orientation: portrait) {
+    height: 320px;
+
+    -webkit-border-radius: 150px;
+       -moz-border-radius: 150px;
+        -ms-border-radius: 150px;
+         -o-border-radius: 150px;
+            border-radius: 150px;
+
+    h1 {
+      font-size: 2em;
+      line-height: 1;
+    }
+
+    p {
+      font-size: 1.3em;
+      line-height: 1;
+    }
+
+    &.short {
+      height: 220px;
+    }
+  }
+}
+
+@mixin ul() {
+  font-size: 2em;
+  font-weight: 300;
+
+  li {
+    position: relative;
+    display: inline-block;
+
+    padding-left: 45px;
+    margin-bottom: 30px;
+
+    &::after {
+      position: absolute;
+      content: '★';
+
+      left: 0;
+      top: 0;
+    }
+  }
+
+   @media all and (orientation: portrait) {
+     li {
+       font-size: 2.2em;
+       margin-bottom: 40px;
+
+       padding-left: 100px;
+     }
+   }
+}
+
+@mixin form() {
+  label {
+    font-size: 2em;
+    float: right;
+    }
+
+  input, select {
+    width: 100%;
+    height: 80px;
+
+    font-size: 2em;
+    font-weight: 300;
+    line-height: 80px;
+    color: $white-color;
+    letter-spacing: 10px;
+
+
+    background: rgba($black-color, .5);
+
+    @include border(1px, rgba($white-color, .5));
+    @include transition();
+    @include border-radius(0);
+    @extend %border-box;
+
+    border: {
+      left: 0;
+      right: 0;
+    }
+
+      clear: both;
+
+    -webkit-appearance: none;
+       -moz-appearance: none;
+         -o-appearance: none;
+            appearance: none;
+
+    &::-webkit-input-placeholder {
+      color: $white-color;
+      font-weight: 200;
+    }
+
+    &:-moz-placeholde {
+      color: $white-color;
+        ont-weight: 200;
+    }
+
+    &:hover, &:focus, &:active {
+      background: rgba($black-color, .8);
+
+      padding-left: 20px;
+
+      @include border(1px, rgba($yellow-color, .8));
+
+      border: {
+        left: 1px, rgba($yellow-color, .8);
+        right: 1px, rgba($yellow-color, .8);
+      }
+    }
+
+    &:focus, &:active {
+      &::-webkit-input-placeholder {
+        color: transparent;
+      }
+
+      &:-moz-placeholde {
+        color: transparent;
+      }
+    }
+  }
+
+  .select {
+      position: relative;
+      @include transition();
+
+      &::before {
+        position: absolute;
+        content: '▲';
+
+        right: 15px;
+        top: 63px;
+      }
+
+      &::after {
+        position: absolute;
+        content: '▼';
+
+        right: 15px;
+        bottom: 17px;
+      }
+
+      &:hover {
+        color: $yellow-color;
+      }
+    }
+
+  @media all and (orientation: portrait) {
+    label {
+      font-size: 3.2em;
+      float: none;
+
+      text-align: center;
+    }
+
+    input, select {
+      height: 150px;
+
+      font-size: 2.9em;
+      line-height: 150px;
+    }
+
+    .select {
+      &::before {
+        font-size: 1.6em;
+        top: 48px;
+      }
+
+      &::after {
+        font-size: 1.6em;
+        bottom: 35px;
+      }
+    }
+  }
+}
+
+// Изображения
+
+@mixin background-rule($color, $repeat, $position, $size) {
+  background: {
+    color: $color;
+    repeat: $repeat;
+    position: $position;
+    size: $size;
+  }
+}
+
+@mixin background-png($file, $position) {
+  background-image: url(../img/#{$file}.png);
+  background-position: $position;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@mixin background-jpg($file, $position) {
+  background-image: url(../img/#{$file}.jpg);
+  background-position: $position;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@mixin background-gif($file, $position) {
+  background-image: url(../img/#{$file}.gif);
+  background-position: $position;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@mixin overlay($width, $m-height, $overlay) {
+  &::after {
+    position: absolute;
+    content: '';
+
+    top: 0;
+    left: 0;
+
+    min-width: $width;
+    width: 100%;
+    min-height: $m-height;
+    height: 100%;
+
+    @include background-png($overlay, center);
+
+    z-index: 1;
+  }
+}
+
+
+@mixin image($image, $width, $m-height, $overlay, $m-width:auto, $height:auto) {
+  @include background-jpg($image, center);
+  @extend %border-box;
+
+  position: relative;
+
+  min-width: $width;
+  max-width: $m-width;
+  min-height: $m-height;
+      height: $height;
+
+  margin: 0 auto;
+
+  @include overlay($width, $m-height, $overlay);
+}
+
+@mixin image-gif($image, $width, $m-height, $overlay, $m-width:auto, $height:auto) {
+  @include background-gif($image, center);
+  @extend %border-box;
+
+  position: relative;
+
+  min-width: $width;
+  max-width: $m-width;
+  min-height: $m-height;
+  height: $height;
+
+  margin: 0 auto;
+
+  @include overlay($width, $m-height, $overlay);
+}
+
+
+// Анимация
+
+@mixin animation($nameAnimation) {
+  -webkit-animation: $nameAnimation 1s ease-in-out infinite;
+     -moz-animation: $nameAnimation 1s ease-in-out infinite;
+      -ms-animation: $nameAnimation 1s ease-in-out infinite;
+       -o-animation: $nameAnimation 1s ease-in-out infinite;
+          animation: $nameAnimation 1s ease-in-out infinite;
+}
+
+@keyframes phone {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+
+  30% {
+    transform: scale3d(0.75, 0.75, 1);
+  }
+
+  60% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@-webkit-keyframes phone {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+  }
+
+  30% {
+    -webkit-transform: scale3d(0.75, 0.75, 1);
+  }
+
+  60% {
+    -webkit-transform: scale3d(1, 1, 1);
+  }
+}
+
+
+@keyframes arrow {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(10px, 10px);
+  }
+}
+
+@-webkit-keyframes arrow {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(10px, 10px);
+  }
+}
+
+
+@keyframes top {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(0, -10px);
+  }
+}

@@ -1,0 +1,19 @@
+@import "variables";
+
+@import "global/fonts";
+
+@import "normalize";
+@import "mixins";
+@import "rule";
+
+@import "global/typography";
+
+@import "blocks/header";
+@import "blocks/advantages";
+@import "blocks/orderButton";
+@import "blocks/other";
+@import "blocks/order";
+@import "blocks/bottom";
+
+
+@import "media";

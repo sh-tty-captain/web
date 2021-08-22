@@ -1,0 +1,32 @@
+.advantages {
+  &__description {
+    background: $black-color;
+  }
+
+  &__section {
+    .advBlock {
+      width: 48%;
+      margin-bottom: 50px;
+
+      &:nth-child(3), &:nth-child(4) {
+        margin-bottom: 0;
+      }
+
+      &__img {
+        width: 25%;
+
+        img {
+          width: 80%;
+        }
+      }
+
+      &__text {
+        width: 75%;
+
+        p {
+          margin: 0;
+        }
+      }
+    }
+  }
+}

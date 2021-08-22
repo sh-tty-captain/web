@@ -1,0 +1,134 @@
+.about {
+  &__top {
+    @include image(about_1, 1032px, 516px, about_overlay_1);
+  }
+
+  &__bottom {
+    max-width: 1032px;
+        width: 100%;
+    height: 100%;
+
+    margin: 0 auto;
+  }
+
+  .left {
+    @include image(about_2, 495px, 516px, about_overlay_2, 516px);
+  }
+
+  .right {
+    @include image(about_3, 495px, 516px, about_overlay_2, 516px);
+  }
+}
+
+.whenuse {
+  &__section {
+    .usedBlock {
+      width: 49%;
+      margin-bottom: 20px;
+
+      h2 {
+        font-size: 2.5em;
+        letter-spacing: inherit;
+
+        margin-top: -8px;
+        z-index: 10;
+      }
+
+      p {
+        font-size: 1.7em;
+      }
+
+      &:nth-child(1) {
+        .usedBlock__img {
+          @include image-gif(whenuse_1, 100%, 260px, whenuse_overlay);
+        }
+      }
+
+      &:nth-child(2) {
+        .usedBlock__img {
+          @include image-gif(whenuse_2, 100%, 260px, whenuse_overlay);
+        }
+      }
+
+      &:nth-child(3) {
+        .usedBlock__img {
+          @include image-gif(whenuse_3, 100%, 260px, whenuse_overlay);
+        }
+      }
+
+      &:nth-child(4) {
+        .usedBlock__img {
+          @include image-gif(whenuse_4, 100%, 260px, whenuse_overlay);
+        }
+      }
+
+      &__img {
+        position: relative;
+      }
+
+      &__description {
+        background: $black-color;
+        min-height: 190px;
+        height: 190px;
+      }
+    }
+  }
+}
+
+.functionality {
+  @include image-gif(functionality, 1032px, 364px, functionality_overlay, 100%, 364px);
+  background-position: 50% 30%;
+
+  .content {
+    height: 100%;
+    padding: 5px 0;
+
+    h1 {
+      font-size: 3em;
+
+      @media all and (orientation: portrait) {
+        font-size: 4.5em;
+        text-align: left;
+      }
+    }
+  }
+}
+
+.delivery {
+  &__attention {
+    background: $black-color;
+    padding: 1.5em 9em;
+
+    @include border(4px, $yellow-color);
+  }
+
+  &__description {
+    img {
+      float: right;
+
+      margin-top: 10px;
+    }
+  }
+}
+
+.security {
+  &__head {
+    background: $black-color;
+  }
+
+  &__description {
+    padding-top: 0;
+  }
+}
+
+.whylove {
+  @include image-gif(whylove, 1032px, 534px, whylove_overlay, 100%);
+
+  ul {
+    width: 49%;
+
+    li {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,117 @@
+.bottom {
+  @include image(bottom, 1032px, 834px, bottom_overlay);
+
+  background-position: center bottom;
+  background-size: contain;
+
+  padding-bottom: 50px;
+
+  &::after {
+    background-position: center bottom;
+    background-size: contain;
+  }
+
+  &__reviews {
+    padding-bottom: 40px;
+
+    .reviewsSection {
+      height: 1330px;
+
+      .revBlock {
+        flex: 1;
+        width: 49%;
+        margin-bottom: 15px;
+
+        &__top {
+          .revHead {
+            @extend %border-box;
+            align-items: center;
+
+            background: rgba($black-color, .8);
+
+            padding: 12px 0 6px;
+            z-index: 10;
+
+            h3 {
+              line-height: 1;
+            }
+
+            p {
+              margin: 0;
+              font-weight: 200;
+            }
+          }
+        }
+
+        &__description {
+          background: $black-color;
+          padding-top: 20px;
+
+          p {
+            margin: 0;
+
+            &.yellow {
+              float: left;
+              margin-right: 15px;
+            }
+          }
+        }
+
+        &:nth-child(1) {
+          order: 1;
+
+          .revBlock__top {
+            @include image(review_1, 100%, 240px, review_overlay);
+          }
+        }
+
+        &:nth-child(2) {
+          order: 3;
+
+          .revBlock__top {
+            @include image(review_2, 100%, 240px, review_overlay);
+          }
+        }
+
+        &:nth-child(3) {
+          order: 2;
+
+          .revBlock__top {
+            @include image(review_3, 100%, 240px, review_overlay);
+          }
+        }
+
+        &:nth-child(4) {
+          .revBlock__top {
+            @include image(review_4, 100%, 240px, review_overlay);
+          }
+        }
+
+        &:nth-child(5) {
+          .revBlock__top {
+            @include image(review_5, 100%, 240px, review_overlay);
+          }
+        }
+
+        &:nth-child(6) {
+          .revBlock__top {
+            @include image(review_6, 100%, 240px, review_overlay);
+          }
+        }
+      }
+    }
+  }
+
+  &__footer {
+    background: $black-color;
+
+    .content {
+      padding: 2em 0;
+
+      p {
+        font-size: 1.2em;
+        font-weight: 200;
+      }
+    }
+  }
+}

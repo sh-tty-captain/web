@@ -1,0 +1,144 @@
+.content {
+  @include content;
+}
+
+.bottomBlock {
+  @include background-png(background, top left);
+
+  padding-bottom: 200px;
+}
+
+.flexbox {
+  @include flexbox(space-between, stretch,space-between);
+}
+
+.vFlexbox {
+  @include flexbox(space-between, stretch,space-between, column);
+}
+
+.btn {
+  @include button;
+}
+
+.fixed {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 9;
+}
+
+#toTop {
+  position: fixed;
+  display: none;
+
+  bottom: 40px;
+  right: 30px;
+
+  width: 80px;
+  height: 65px;
+  background-color: rgba($yellow-color, .3);
+
+  cursor: pointer;
+  z-index: 999;
+
+  @include transition();
+
+  &::after {
+    position: absolute;
+    content: '';
+
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    background-image: url(../img/top.svg);
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 20px;
+
+    margin: auto;
+    opacity: .5;
+  }
+
+  &:hover {
+    @include animation(top);
+
+    background-color: rgba($yellow-color, .6);
+
+    &::after {
+      opacity: 1;
+    }
+  }
+}
+
+button {
+  font-size: 44px;
+  font-weight: 700;
+  text-transform: lowercase;
+}
+
+ul {
+  @include ul();
+}
+
+form {
+  @include form();
+}
+
+.uppercase {
+  @extend %uppercase;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.yellow {
+  color: $yellow-color;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.strike {
+  font-weight: 200;
+  text-decoration: line-through;
+}
+
+.end {
+  justify-content: flex-end;
+}
+
+.noMargin {
+  @extend %no-margin;
+}
+
+.marginTop15 {
+  margin-top: 15px;
+}
+
+.marginTop45 {
+  margin-top: 45px;
+}
+
+.padding20 {
+  padding: 20px 0;
+}
+
+.marginCenter {
+  margin: 0 auto;
+}

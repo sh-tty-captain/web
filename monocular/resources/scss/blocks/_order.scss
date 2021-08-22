@@ -1,0 +1,37 @@
+.order {
+  @include image(order, 1032px, 1550px, order_overlay, 100%, 1550px);
+
+  clear: both;
+
+  &::after {
+    opacity: .6;
+  }
+
+  h1 {
+    border-bottom: 1px solid rgba($white-color, .4);
+
+    padding-bottom: 5px;
+    margin-bottom: 60px;
+  }
+
+  form {
+    z-index: 10;
+
+    .btn {
+      width: 100%;
+    }
+
+    .small {
+      font-size: 1.6em;
+      line-height: 1;
+    }
+
+    .form {
+      &__group {
+        margin-bottom: 25px;
+      }
+    }
+
+    .order__stock {}
+  }
+}
